@@ -63,12 +63,11 @@ Route::post('/call', function()
 Route::post('/outbound', function()
 {
     // A message for Twilio's TTS engine to repeat
-    $sayMessage = 'Thanks for contacting our sales department. If this were a
-        real click to call application, we would redirect your call to our
-        sales team right now using the Dial tag.';
+    $sayMessage = 'Thanks Ji jai jo.';
 
     $twiml = new Services_Twilio_Twiml();
     $twiml->say($sayMessage, array('voice' => 'alice'));
+		$twiml->play('http://umadbro.io/sounds/sitcom/aplauso1.mp3');s
     // $response->dial('+16518675309');
 
     $response = Response::make($twiml, 200);
