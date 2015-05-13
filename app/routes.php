@@ -58,7 +58,10 @@ Route::post('/call', function()
     }
 
     // return a JSON response
-    return array('message' => 'Call incoming!');
+    return array('message' => 'Call incoming!',
+		'carpeta'=>$carpeta,
+		'sonido' =>$sonido
+		);
 });
 
 // POST URL to handle form submission and make outbound call

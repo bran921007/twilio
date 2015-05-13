@@ -37,6 +37,14 @@
 						<input type="text" id="phoneNumber"
 							placeholder="(651) 555-7889" class="form-control">
 					</div>
+					<div class="form-group">
+						<input type="text" id="carpeta"
+							placeholder="carpeta" class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="text" id="sonido"
+							placeholder="sonido" class="form-control">
+					</div>
 					<button type="submit" class="btn btn-default">
 						Contact Sales
 					</button>
