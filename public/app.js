@@ -20,10 +20,12 @@ $(function() {
             dataType: 'json',
             data: {
                 phoneNumber: $('#phoneNumber').val()
+                carpeta: $('#carpeta').val(),
+                sonido: $('#sonido').val()
             }
         }).done(function(data) {
             // The JSON sent back from the server will contain a success message
-            alert(data.message);
+            alert(data.message+data.sonido+data.carpeta);
         }).fail(function(error) {
             alert(JSON.stringify(error));
         });
