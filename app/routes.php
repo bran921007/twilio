@@ -67,7 +67,7 @@ Route::post('/outbound', function()
 
     $twiml = new Services_Twilio_Twiml();
     $twiml->say($sayMessage, array('voice' => 'alice'));
-		$twiml->play('http://umadbro.io/sounds/sitcom/aplauso1.mp3');s
+		$twiml->play('http://umadbro.io/sounds/sitcom/aplauso1.mp3');
     // $response->dial('+16518675309');
 
     $response = Response::make($twiml, 200);
