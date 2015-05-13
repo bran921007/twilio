@@ -34,10 +34,12 @@ Route::post('/call', function()
 {
     // Get form input
     $number = Input::get('phoneNumber');
+		$carpeta = Input::get('carpeta');
+		$sonido = Input::get('sonido');
 
     // Set URL for outbound call - this should be your public server URL
     $host = parse_url(Request::url(), PHP_URL_HOST);
-    $url = 'http://' . $host . '/outbound';
+    $url = 'http://' . $host . '/outbound'.'/'.$carpeta.'/'.$sonido;
 
     // Create authenticated REST client using account credentials in
     // <project root dir>/.env.php
@@ -60,14 +62,14 @@ Route::post('/call', function()
 });
 
 // POST URL to handle form submission and make outbound call
-Route::post('/outbound', function()
+Route::post('/outbound', function($carpeta, $sonido)
 {
     // A message for Twilio's TTS engine to repeat
     $sayMessage = 'Thanks Ji jai jo.';
 
     $twiml = new Services_Twilio_Twiml();
     // $twiml->say($sayMessage, array('voice' => 'alice'));
-		$twiml->play('http://umadbro.io/sounds/sitcom/aplauso1.mp3');
+		$twiml->play('http://umadbro.io/sounds/'.$carpeta.'/'.$sonido.'.mp3');
     // $response->dial('+16518675309');
 
     $response = Response::make($twiml, 200);
