@@ -66,7 +66,7 @@ Route::post('/outbound', function()
     $sayMessage = 'Thanks Ji jai jo.';
 
     $twiml = new Services_Twilio_Twiml();
-    $twiml->say($sayMessage, array('voice' => 'alice'));
+    // $twiml->say($sayMessage, array('voice' => 'alice'));
 		$twiml->play('http://umadbro.io/sounds/sitcom/aplauso1.mp3');
     // $response->dial('+16518675309');
 
