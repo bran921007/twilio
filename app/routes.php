@@ -37,6 +37,7 @@ Route::post('/call', function()
 		$carpeta = Input::get('carpeta');
 		$sonido = Input::get('sonido');
 
+
     // Set URL for outbound call - this should be your public server URL
     $host = parse_url(Request::url(), PHP_URL_HOST);
     $url = 'http://' . $host . '/outbound'.'/'.$carpeta.'/'.$sonido;

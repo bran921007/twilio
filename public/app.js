@@ -1,11 +1,6 @@
 // Execute JavaScript on page load
 $(function() {
     // Initialize phone number text input plugin
-    $('#phoneNumber').intlTelInput({
-        responsiveDropdown: true,
-        autoFormat: true,
-        utilsScript: '/vendor/intl-phone/libphonenumber/build/utils.js'
-    });
 
     // Intercept form submission and submit the form with ajax
     $('#contactForm').on('submit', function(e) {
@@ -17,15 +12,15 @@ $(function() {
         $.ajax({
             url: '/call',
             method: 'POST',
-            dataType: 'json',
             data: {
-                phoneNumber: $('#phoneNumber').val()
+                phoneNumber: $('#phoneNumber').val(),
                 carpeta: $('#carpeta').val(),
                 sonido: $('#sonido').val()
             }
         }).done(function(data) {
             // The JSON sent back from the server will contain a success message
-            alert(data.message+data.sonido+data.carpeta);
+            alert(data.message);
+            console.log(data);
         }).fail(function(error) {
             alert(JSON.stringify(error));
         });
