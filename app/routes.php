@@ -66,7 +66,7 @@ Route::post('/call', function()
 });
 
 // POST URL to handle form submission and make outbound call
-Route::post('/outbound', function($carpeta, $sonido)
+Route::get('/outbound/{carpeta}/{sonido}', function($carpeta, $sonido)
 {
     // A message for Twilio's TTS engine to repeat
     $sayMessage = 'Thanks Ji jai jo.';
