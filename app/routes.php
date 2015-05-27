@@ -19,7 +19,7 @@ Route::get('/', function()
 Route::get('/puto/{msg}', function($msg)
 {
 
-	$client = new Services_Twilio('AC070cab9c97c0d6bacd59425aa2b1ca64','242475a38db1ae1e9f745890711579b7');
+	$client = new Services_Twilio('AUTH ID','TOKEN ID');
 	$message = $client->account->messages->sendMessage(
   '+14693514813', // From a valid Twilio number
   '+13156003423', // Text this number
