@@ -22,18 +22,5 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
-	public function payment()
-	{
-
-		\Stripe\Stripe::setApiKey('sk_test_IXxOuQruNYUMBapGxGLXnqf6');
-		$token = Input::get('token');
-		$amount = Input::get('amount');
-		try {
-		$charge = \Stripe\Charge::create(array('card' => $token, 'amount' => $amount, 'currency' => 'usd'));
-	}catch (Error\Card $e){
-		return Response::json(array('status' => 'failed'));
-	}
-		return Response::json(array('status' => 'success'));
-	}
 
 }
