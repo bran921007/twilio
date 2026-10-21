@@ -2,3 +2,7 @@
 .env.*.php
 .env.php
 .env
+
+/.env
+/.phpunit.cache
+/vendor-runtime/
